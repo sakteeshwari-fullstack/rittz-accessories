@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+
+import { dir } from "i18next";
+import { cookies } from "next/headers"; // ✅ to read language from cookie
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -11,6 +15,9 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// List of supported locales (should match your next-i18next.config.js)
+const supportedLocales = ['en', 'fr'];
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,8 +29,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Get language from cookie (set by i18next-browser-languagedetector)
+  const cookieStore = cookies();
+  const lng = cookieStore.get("i18next")?.value || "en";
+
+  const locale = supportedLocales.includes(lng) ? lng : "en";
+
   return (
-    <html lang="en">
+    <html lang={locale} dir={dir(locale)}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
