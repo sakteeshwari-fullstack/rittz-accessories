@@ -1,5 +1,5 @@
 'use client';
-import '../i18n'; // ✅ Import here — client only
+
 
 
 import Header from './components/Header/Header';

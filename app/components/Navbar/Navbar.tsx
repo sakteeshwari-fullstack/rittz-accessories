@@ -4,7 +4,8 @@ import { useState } from "react";
 import { ChevronDown, Download, ArrowRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import LanguageSwitcher from '../../components/LanguageSwitcher';
+import GoogleTranslateScript from "../GoogleTranslateScript"; // adjust path if needed
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,10 +50,15 @@ export default function Navbar() {
           <button className="bg-black text-white px-4 py-2 flex items-center gap-2">
             Enquiry Us <ArrowRight className="w-4 h-4" />
           </button>
-          <div className="flex items-center gap-2 text-sm">
-            <Image src="/uk-flag.png" alt="English" width={20} height={14} />
-            <span>English</span>
-          </div>
+        {/* Language dropdown styled wrapper */}
+<div className="relative">
+  <div
+    id="google_translate_element"
+    className="translate-dropdown bg-white  px-3 py-1 rounded text-sm"
+  />
+</div>
+<GoogleTranslateScript />
+
         </div>
 
         {/* Mobile Hamburger */}
@@ -91,9 +97,15 @@ export default function Navbar() {
           <button className="bg-black text-white px-4 py-2 w-full flex items-center justify-center gap-2">
             Enquiry Us <ArrowRight className="w-4 h-4" />
           </button>
-          
-           <LanguageSwitcher></LanguageSwitcher>
-         
+        {/* Language dropdown styled wrapper */}
+<div className="relative">
+  <div
+    id="google_translate_element"
+    className="translate-dropdown bg-white border px-3 py-1 rounded text-sm"
+  />
+</div>
+<GoogleTranslateScript />
+
         </div>
       )}
     </nav>
