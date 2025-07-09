@@ -1,22 +1,21 @@
-// components/menuData.ts
-
-export const mobileMenu = [
+// menuData.ts
+export const menuData = [
   {
     label: "Home",
     href: "/",
   },
   {
     label: "About Us",
-    children: [
+    submenu: [
       { label: "Certificates", href: "/about/certificates" },
     ],
   },
   {
     label: "Services",
-    children: [
+    submenu: [
       {
         label: "Products",
-        children: [
+        subsubmenu: [
           { label: "Belts", href: "/products/belts" },
           { label: "Wallets", href: "/products/wallets" },
           { label: "Bags", href: "/products/bags" },

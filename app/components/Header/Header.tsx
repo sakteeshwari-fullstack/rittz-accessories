@@ -5,23 +5,29 @@ import { gsap } from "gsap";
 import { Phone, Mail } from "lucide-react";
 
 export default function Header() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+    const tl = gsap.timeline({ defaults: { duration: 1.4, ease: "power4.out" } });
 
-    tl.from(leftRef.current, {
-      x: -50,
+    tl.from(containerRef.current, {
+      y: 200,
       opacity: 0,
-    }).from(rightRef.current, {
-      x: 50,
-      opacity: 0,
-    }, "-=0.8");
+    })
+      .from(leftRef.current, {
+        x: -100,
+        opacity: 0,
+      }, "-=1.0")
+      .from(rightRef.current, {
+        x: 100,
+        opacity: 0,
+      }, "-=1.2");
   }, []);
 
   return (
-    <div className="bg-orange-600 p-6 text-white text-sm py-2">
+    <div ref={containerRef} className="bg-orange-600 p-6 text-white text-sm py-2">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
         {/* Left side: Phone numbers */}
         <div ref={leftRef} className="flex flex-wrap items-center gap-4">

@@ -9,8 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ThrivingSection() {
   const sectionRef = useRef(null);
-const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
-
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const textRef = useRef(null);
 
   useEffect(() => {
@@ -56,10 +55,17 @@ const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   return (
     <section
-      className="bg-orange-500 text-black py-16 px-6 md:px-20"
+      className="relative text-black py-16 px-6 md:px-20 overflow-hidden"
       ref={sectionRef}
     >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 bg-[url('/thrivingbgimage.jpeg')] bg-cover bg-center bg-fixed z-0" />
+
+      {/* Orange Overlay Layer */}
+      <div className="absolute inset-0 bg-orange-500/40 z-10" />
+
+      {/* Content Wrapper */}
+      <div className="relative z-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         {/* Left content */}
         <div className="text-center md:text-left" ref={textRef}>
           <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
@@ -76,13 +82,14 @@ const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
           {cards.map((item, idx) => (
             <div
               key={idx}
-             ref={(el) => {
-  cardRefs.current[idx] = el;
-}}
-
+              ref={(el) => {
+                cardRefs.current[idx] = el;
+              }}
               className="w-40 h-56 bg-neutral-100 text-center cursor-pointer rounded-2xl shadow-md flex flex-col justify-center items-center p-4 transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-orange-100"
             >
-              <div className="text-4xl mb-2 animate-bounce-slow">{item.icon}</div>
+              <div className="text-4xl mb-2 animate-bounce-slow">
+                {item.icon}
+              </div>
               <hr className="w-6 border-t border-black my-2" />
               <p className="font-bold">{item.title}</p>
             </div>
@@ -97,7 +104,8 @@ const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
         }
 
         @keyframes bounceSlow {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0);
           }
           50% {

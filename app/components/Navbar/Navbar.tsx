@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
 import {
   ChevronDown,
   Download,
@@ -12,10 +11,12 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname } from "next/navigation";
 import GoogleTranslateScript from "../GoogleTranslateScript";
 import NavbarMobileMenu from "./NavMobile";
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,11 +30,39 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power3.out" } });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".navbar-container",
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+      defaults: { duration: 1.2, ease: "power4.out" },
+    });
 
-    tl.from(logoRef.current, { opacity: 0, y: -20 })
-      .from(navLinksRef.current, { opacity: 0, y: -20 }, "-=0.4")
-      .from(buttonsRef.current, { opacity: 0, x: 20 }, "-=0.4");
+    tl.from(logoRef.current, {
+      opacity: 0,
+      y: -100,
+      rotateX: 45,
+    })
+      .from(
+        navLinksRef.current,
+        {
+          opacity: 0,
+          y: -80,
+          rotateX: 45,
+        },
+        "-=0.9"
+      )
+      .from(
+        buttonsRef.current,
+        {
+          opacity: 0,
+          x: 50,
+          rotateY: 30,
+          scale: 0.9,
+        },
+        "-=1.0"
+      );
   }, []);
 
   useEffect(() => {
@@ -47,7 +76,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className="bg-white border-b p-1 px-6 border-gray-200">
+    <nav className="navbar-container sticky top-0 z-[9999] bg-white shadow-xl p-1 px-6">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <div ref={logoRef} className="flex items-center gap-2">
@@ -108,7 +137,6 @@ export default function Navbar() {
               Services <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute left-0 top-full pt-4 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md p-2 min-w-[180px] z-10 animate-fadeIn">
-              {/* Products submenu trigger */}
               <div className="relative group/products">
                 <div className="flex items-center justify-between px-4 py-2 rounded hover:bg-orange-50 hover:text-orange-600 cursor-pointer transition-all">
                   Products <ChevronDown className="w-4 h-4" />
@@ -186,16 +214,14 @@ export default function Navbar() {
         </button>
       </div>
 
-{menuOpen && (
-  <NavbarMobileMenu
-    isOpen={menuOpen}
-    onClose={() => setMenuOpen(false)}
-  />
-)}
-
-     
-
-
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <NavbarMobileMenu
+          isOpen={menuOpen}
+          onClose={() => setMenuOpen(false)}
+          
+        />
+      )}
     </nav>
   );
 }

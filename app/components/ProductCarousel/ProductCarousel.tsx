@@ -28,21 +28,38 @@ export default function AutoScrollShowcase() {
   const clientRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const animateLoop = (ref: HTMLDivElement | null, duration = 20) => {
-      if (!ref) return;
+   const animateLoop = (
+  ref: HTMLDivElement | null,
+  duration = 20,
+  direction: 'left' | 'right' = 'left'
+) => {
+  if (!ref) return;
 
-      const totalWidth = ref.scrollWidth / 2;
-
-      gsap.to(ref, {
-        x: `-=${totalWidth}`,
+  if (direction === 'left') {
+    gsap.to(ref, {
+      xPercent: -50,
+      duration,
+      ease: 'linear',
+      repeat: -1,
+    });
+  } else {
+    // Shift back first, then scroll forward
+    gsap.fromTo(
+      ref,
+      { xPercent: -50 },
+      {
+        xPercent: 0,
         duration,
         ease: 'linear',
         repeat: -1,
-      });
-    };
+      }
+    );
+  }
+};
 
-    animateLoop(productRef.current, 25); // slow loop
-    animateLoop(clientRef.current, 20);  // slightly faster
+
+    animateLoop(productRef.current, 25, 'left');  // Products: right to left
+    animateLoop(clientRef.current, 20, 'right');  // Clients: left to right
 
     return () => {
       gsap.killTweensOf(productRef.current);
@@ -51,12 +68,12 @@ export default function AutoScrollShowcase() {
   }, []);
 
   return (
-    <div className="bg-white px-6 lg:px-20 py-">
+    <div className="bg-white px-6 lg:px-20 py-12">
       {/* Product Images Loop */}
       <div className="overflow-hidden relative">
         <div
           ref={productRef}
-          className="flex w-max gap-8"
+          className="flex w-max gap-8 will-change-transform"
         >
           {[...products, ...products].map((src, i) => (
             <Image
@@ -78,7 +95,7 @@ export default function AutoScrollShowcase() {
       <div className="overflow-hidden relative">
         <div
           ref={clientRef}
-          className="flex w-max gap-16 items-center"
+          className="flex w-max gap-16 items-center will-change-transform"
         >
           {[...clients, ...clients].map((src, i) => (
             <Image

@@ -48,15 +48,16 @@ export default function FaqSection() {
 
     gsap.fromTo(
       faqRef.current,
-      { opacity: 0, y: 100 },
+      { opacity: 0, x: 300 }, // start far right
       {
         opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out",
+        x: 0,
+        duration: 1.5,
+        ease: "power4.out",
         scrollTrigger: {
           trigger: faqRef.current,
           start: "top 80%",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -93,7 +94,9 @@ export default function FaqSection() {
 
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                openIndex === index ? "max-h-[500px] mt-3 opacity-100" : "max-h-0 opacity-0"
+                openIndex === index
+                  ? "max-h-[500px] mt-3 opacity-100"
+                  : "max-h-0 opacity-0"
               }`}
             >
               <p className="text-gray-700 text-sm">{faq.answer}</p>
