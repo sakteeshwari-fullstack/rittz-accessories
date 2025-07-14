@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Download, ArrowRight, Menu, X } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GoogleTranslateScript from "../GoogleTranslateScript";
+
 import NavbarMobileMenu from "./NavMobile";
 import type { MenuItem } from "../../types/menuTypes";
 
@@ -153,7 +153,7 @@ export default function Navbar({ menuData }: NavbarProps) {
           <div className="relative">
             <div id="google_translate_element" className="translate-dropdown bg-white px-3 py-1 rounded text-sm" />
           </div>
-          <GoogleTranslateScript />
+        
         </div>
 
         {/* Mobile Menu Button */}
