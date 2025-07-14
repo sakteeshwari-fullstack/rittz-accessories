@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from "./components/Footer/Footer";
+import { menuData } from "./data/menuData";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +27,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <Header />
-        <Navbar />
+        <Navbar menuData={menuData}/>
         {children}
         <Footer />
       </body>

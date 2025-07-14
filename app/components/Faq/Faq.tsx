@@ -68,7 +68,7 @@ export default function FaqSection() {
       className="bg-white px-6 md:px-20 py-16"
       ref={faqRef}
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+      <h2 className="text-3xl text-black md:text-4xl font-bold text-center mb-10">
         FAQ’s
       </h2>
 

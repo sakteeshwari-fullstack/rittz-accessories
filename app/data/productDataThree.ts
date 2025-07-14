@@ -1,0 +1,190 @@
+export const extraProductsData = {
+  belt: [
+    {
+      id: "B021",
+      name: "Belt – B021",
+      image: "/product-belt/belt21.png",
+      link: "/product/belt-b021/",
+    },
+    {
+      id: "B022",
+      name: "Belt – B022",
+      image: "/product-belt/belt22.png",
+      link: "/product/belt-b022/",
+    },
+    {
+      id: "B023",
+      name: "Belt – B023",
+      image: "/product-belt/belt23.png",
+      link: "/product/belt-b023/",
+    },
+    {
+      id: "B024",
+      name: "Belt – B024",
+      image: "/product-belt/belt24.png",
+      link: "/product/belt-b024/",
+    },
+    {
+      id: "B025",
+      name: "Belt – B025",
+      image: "/product-belt/belt25.png",
+      link: "/product/belt-b025/",
+    },
+    {
+      id: "B026",
+      name: "Belt – B026",
+      image: "/product-belt/belt26.png",
+      link: "/product/belt-b026/",
+    },
+    {
+      id: "B027",
+      name: "Belt – B027",
+      image: "/product-belt/belt27.png",
+      link: "/product/belt-b027/",
+    },
+    {
+      id: "B028",
+      name: "Belt – B028",
+      image: "/product-belt/belt28.png",
+      link: "/product/belt-b028/",
+    },
+    {
+      id: "B029",
+      name: "Belt – B029",
+      image: "/product-belt/belt29.png",
+      link: "/product/belt-b029/",
+    },
+    {
+      id: "B030",
+      name: "Belt – B030",
+      image: "/product-belt/belt30.png",
+      link: "/product/belt-b030/",
+    },
+  ],
+
+  wallet: [
+    {
+      id: "W021",
+      name: "Wallet – W021",
+      image: "/product-wallet/wallet21.png",
+      link: "/product/wallet-w021/",
+    },
+    {
+      id: "W022",
+      name: "Wallet – W022",
+      image: "/product-wallet/wallet22.png",
+      link: "/product/wallet-w022/",
+    },
+    {
+      id: "W023",
+      name: "Wallet – W023",
+      image: "/product-wallet/wallet23.png",
+      link: "/product/wallet-w023/",
+    },
+    {
+      id: "W024",
+      name: "Wallet – W024",
+      image: "/product-wallet/wallet24.png",
+      link: "/product/wallet-w024/",
+    },
+    {
+      id: "W025",
+      name: "Wallet – W025",
+      image: "/product-wallet/wallet25.png",
+      link: "/product/wallet-w025/",
+    },
+    {
+      id: "W026",
+      name: "Wallet – W026",
+      image: "/product-wallet/wallet26.png",
+      link: "/product/wallet-w026/",
+    },
+    {
+      id: "W027",
+      name: "Wallet – W027",
+      image: "/product-wallet/wallet27.png",
+      link: "/product/wallet-w027/",
+    },
+    {
+      id: "W028",
+      name: "Wallet – W028",
+      image: "/product-wallet/wallet28.png",
+      link: "/product/wallet-w028/",
+    },
+    {
+      id: "W029",
+      name: "Wallet – W029",
+      image: "/product-wallet/wallet29.png",
+      link: "/product/wallet-w029/",
+    },
+    {
+      id: "W030",
+      name: "Wallet – W030",
+      image: "/product-wallet/wallet30.png",
+      link: "/product/wallet-w030/",
+    },
+  ],
+
+  bag: [
+    {
+      id: "BG121",
+      name: "Bag – BG121",
+      image: "/product-bag/bag21.png",
+      link: "/product/bag-bg121/",
+    },
+    {
+      id: "BG122",
+      name: "Bag – BG122",
+      image: "/product-bag/bag22.png",
+      link: "/product/bag-bg122/",
+    },
+    {
+      id: "BG123",
+      name: "Bag – BG123",
+      image: "/product-bag/bag23.png",
+      link: "/product/bag-bg123/",
+    },
+    {
+      id: "BG124",
+      name: "Bag – BG124",
+      image: "/product-bag/bag24.png",
+      link: "/product/bag-bg124/",
+    },
+    {
+      id: "BG125",
+      name: "Bag – BG125",
+      image: "/product-bag/bag25.png",
+      link: "/product/bag-bg125/",
+    },
+    {
+      id: "BG126",
+      name: "Bag – BG126",
+      image: "/product-bag/bag26.png",
+      link: "/product/bag-bg126/",
+    },
+    {
+      id: "BG127",
+      name: "Bag – BG127",
+      image: "/product-bag/bag27.png",
+      link: "/product/bag-bg127/",
+    },
+    {
+      id: "BG128",
+      name: "Bag – BG128",
+      image: "/product-bag/bag28.png",
+      link: "/product/bag-bg128/",
+    },
+    {
+      id: "BG129",
+      name: "Bag – BG129",
+      image: "/product-bag/bag29.png",
+      link: "/product/bag-bg129/",
+    },
+    {
+      id: "BG130",
+      name: "Bag – BG130",
+      image: "/product-bag/bag30.png",
+      link: "/product/bag-bg130/",
+    },
+  ],
+};

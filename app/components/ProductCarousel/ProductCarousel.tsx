@@ -89,7 +89,7 @@ export default function AutoScrollShowcase() {
       </div>
 
       {/* Title */}
-      <h2 className="text-center text-3xl mt-16 font-semibold my-6">Our Clients</h2>
+      <h2 className="text-center text-black text-3xl mt-16 font-semibold my-6">Our Clients</h2>
 
       {/* Client Logos Loop */}
       <div className="overflow-hidden relative">

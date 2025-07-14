@@ -57,7 +57,7 @@ export default function TestimonialSection() {
 
   return (
     <section className="bg-white py-16 px-6 md:px-20">
-      <h2 className="text-4xl font-bold text-center mb-12">Happy Customers!</h2>
+      <h2 className="text-4xl font-bold text-center mb-12 text-black">Happy Customers!</h2>
 
       <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {testimonials.map((testimonial, index) => (
