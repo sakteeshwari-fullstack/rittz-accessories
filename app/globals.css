@@ -26,53 +26,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Hide ugly borders & adjust spacing */
-.translate-dropdown select {
-  border: none !important;
-  padding: 6px 10px;
-  font-size: 14px;
-  background-color: white;
-  cursor: pointer;
-}
-
-/* Optional: remove box shadows */
-.goog-te-gadget {
-  font-family: inherit !important;
-  font-size: 14px !important;
-}
-
-/* Center arrow icon in line */
-.goog-te-combo {
-  padding-right: 24px !important;
-}
-
-
-/* Remove default Google Translate text/icon */
-#google_translate_element .goog-te-gadget {
-  font-size: 0;
-  color: transparent;
-}
-
-#google_translate_element .goog-te-combo {
-  display: flex;
-  align-items: center;
-  padding: 6px 12px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #f9f9f9;
-  color: #333;
-  appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 12px;
-  padding-right: 24px;
-}
-
-/* Optional: hide the "Powered by Google" text */
+.goog-te-banner-frame.skiptranslate,
 .goog-logo-link,
 .goog-te-gadget span {
   display: none !important;
 }
 
+body {
+  top: 0px !important;
+}

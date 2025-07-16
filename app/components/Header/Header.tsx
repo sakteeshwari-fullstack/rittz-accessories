@@ -27,7 +27,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div ref={containerRef} className="bg-orange-600 p-6 text-white text-sm py-2">
+    <div ref={containerRef} className="bg-orange-600 p-6 text-white text-sm py-1">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-2">
         {/* Left side: Phone numbers */}
         <div ref={leftRef} className="flex flex-wrap items-center gap-4">

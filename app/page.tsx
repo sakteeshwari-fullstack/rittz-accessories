@@ -18,14 +18,25 @@ export default function HomePage() {
     <main className="">
       
       <HomeVideo {...heroData} ></HomeVideo>
-      <LoadingContent></LoadingContent>
+
+     
+  <LoadingContent></LoadingContent>
+
       <Sedex></Sedex>
+       
       <Leather></Leather>
+   
       <ProductCarousel></ProductCarousel>
+     
       <Quality></Quality>
+      
       <Thriving></Thriving>
       <HappyCustomers></HappyCustomers>
-      <Faq></Faq>
+     
+      <div className="overflow-x-hidden">
+  <Faq />
+</div>
+
     </main>
   );
 }

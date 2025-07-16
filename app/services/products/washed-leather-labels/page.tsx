@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div>
        <ProductImage
-              imageUrl="/product-washed-labels.jpg"
+              imageUrl="/productwashing-labels.jpg"
               title="Crafted by Time. Defined by Texture. Built for Legacy."
             ></ProductImage>
             <WashedLeatherLabelsFeatures></WashedLeatherLabelsFeatures>

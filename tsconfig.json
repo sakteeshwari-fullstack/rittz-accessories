@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Navbar/Navbar.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Navbar/Navbar.jsx", "app/data/menuData.jsx", "app/components/Navbar/NavMobile.jsx", "app/layout.tsx"],
   "exclude": ["node_modules"]
 }
